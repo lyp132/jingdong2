@@ -1,4 +1,4 @@
-<template>aaaaa</template>
+<template>aaaaaa</template>
 
 <script>
 export default {
