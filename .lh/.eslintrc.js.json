@@ -1,0 +1,18 @@
+{
+    "sourceFile": ".eslintrc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1690312701571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1690312701571,
+            "name": "Commit-0",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    node: true\n  },\n  extends: [\n    'plugin:vue/vue3-essential',\n    '@vue/standard'\n  ],\n  parserOptions: {\n    parser: '@babel/eslint-parser'\n  },\n  rules: {\n    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n    // 关闭组件名称校验\n    'vue/multi-word-component-names': 'off'\n  }\n}\n"
+        }
+    ]
+}
