@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/views/shop/commonCartEffect.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1692357626656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1692357644148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n // 更改商品数量\r\n export const changeCartItemInfo = (shopId, productId, item, num, shopname) => {\r\n     console.log(1, shopId, productId, item, num, shopname)\r\n     store.commit('changeCartItemInfo', {\r\n-      shopId,\r\n-      productId,\r\n-      item,\r\n-      num,\r\n-      shopname\r\n+        shopId,\r\n+        productId,\r\n\\ No newline at end of file\n+        item,\r\n+        num,\r\n+        shopname\r\n     })\r\n-  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1692357703029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n+\r\n+import { useStore } from \"vuex\"\r\n // 更改商品数量\r\n export const changeCartItemInfo = (shopId, productId, item, num, shopname) => {\r\n-  console.log(1, shopId, productId, item, num, shopname);\r\n+    const store = useStore()\r\n+  console.log(1, shopId, productId, item, num, shopname)\r\n   store.commit(\"changeCartItemInfo\", {\r\n     shopId,\r\n     productId,\r\n     item,\r\n     num,\r\n-    shopname,\r\n-  });\r\n-};\r\n+    shopname\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1692357717594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n \r\n import { useStore } from \"vuex\"\r\n // 更改商品数量\r\n export const changeCartItemInfo = (shopId, productId, item, num, shopname) => {\r\n-    const store = useStore()\r\n+  const store = useStore()\r\n   console.log(1, shopId, productId, item, num, shopname)\r\n-  store.commit(\"changeCartItemInfo\", {\r\n+  store.commit('changeCartItemInfo', {\r\n     shopId,\r\n     productId,\r\n     item,\r\n     num,\r\n"
+                }
+            ],
+            "date": 1692357626656,
+            "name": "Commit-0",
+            "content": "// 更改商品数量\r\nexport const changeCartItemInfo = (shopId, productId, item, num, shopname) => {\r\n    console.log(1, shopId, productId, item, num, shopname)\r\n    store.commit('changeCartItemInfo', {\r\n      shopId,\r\n      productId,\r\n      item,\r\n      num,\r\n      shopname\r\n    })\r\n  }"
+        }
+    ]
+}

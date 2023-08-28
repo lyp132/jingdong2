@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/ShopInfo.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1691509996759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1691510017538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,24 @@\n-<template>aaaaaa</template>\r\n+<template><div class=\"nearby__item\">\r\n+    <img class=\"nearby__item__img\" :src=\"item.imgUrl\" alt=\"\" />\r\n+    <div class=\"nearby__item__content\">\r\n+      <div class=\"nearby__item__content__shopname\">{{ item.name }}</div>\r\n+      <div class=\"nearby__item__content__tags\">\r\n+        <div class=\"nearby__item__content__tags__tag\">\r\n+          月售{{ item.sales }}+\r\n+        </div>\r\n+        <div class=\"nearby__item__content__tags__tag\">\r\n+          起送¥{{ item.expressLimit }}\r\n+        </div>\r\n+        <div class=\"nearby__item__content__tags__tag\">\r\n+          基础运费¥{{ item.expressPrice }}\r\n+        </div>\r\n+      </div>\r\n+      <p class=\"nearby__item__content__highlight\">\r\n+        {{ item.slogan }}\r\n+      </p>\r\n+    </div>\r\n+  </div></template>\r\n \r\n <script>\r\n export default {\r\n   name: 'Template',\r\n"
+                },
+                {
+                    "date": 1691510074662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,21 @@\n <template>\r\n-  <div class=\"nearby__item\">\r\n-    <img class=\"nearby__item__img\" :src=\"item.imgUrl\" alt=\"\" />\r\n-    <div class=\"nearby__item__content\">\r\n-      <div class=\"nearby__item__content__shopname\">{{ item.name }}</div>\r\n-      <div class=\"nearby__item__content__tags\">\r\n-        <div class=\"nearby__item__content__tags__tag\">\r\n+  <div class=\"shop\">\r\n+    <img class=\"shop__img\" :src=\"item.imgUrl\" alt=\"\" />\r\n+    <div class=\"shop__content\">\r\n+      <div class=\"shop__content__shopname\">{{ item.name }}</div>\r\n+      <div class=\"shop__content__tags\">\r\n+        <div class=\"shop__content__tags__tag\">\r\n           月售{{ item.sales }}+\r\n         </div>\r\n-        <div class=\"nearby__item__content__tags__tag\">\r\n+        <div class=\"shop__content__tags__tag\">\r\n           起送¥{{ item.expressLimit }}\r\n         </div>\r\n-        <div class=\"nearby__item__content__tags__tag\">\r\n+        <div class=\"shop__content__tags__tag\">\r\n           基础运费¥{{ item.expressPrice }}\r\n         </div>\r\n       </div>\r\n-      <p class=\"nearby__item__content__highlight\">\r\n+      <p class=\"shop__content__highlight\">\r\n         {{ item.slogan }}\r\n       </p>\r\n     </div>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1691510100351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n-  name: 'Template',\r\n+  name: 'ShopInfo',\r\n   setup() {}\r\n }\r\n </script>\r\n \r\n"
+                }
+            ],
+            "date": 1691509996759,
+            "name": "Commit-0",
+            "content": "<template>aaaaaa</template>\r\n\r\n<script>\r\nexport default {\r\n  name: 'Template',\r\n  setup() {}\r\n}\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n</style>\r\n"
+        }
+    ]
+}

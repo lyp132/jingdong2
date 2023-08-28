@@ -3,11 +3,27 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1690312701571,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690520628238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+module.exports = {\n+  root: true,\n+  env: {\n+    node: true\n+  },\n+  extends: [\n+    'plugin:vue/vue3-essential',\n+    '@vue/standard'\n+  ],\n+  parserOptions: {\n+    parser: '@babel/eslint-parser'\n+  },\n+  rules: {\n+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    // 关闭组件名称校验\n+    'vue/multi-word-component-names': 'off',\n+    'space-before-function-paren': 0\n+  }\n+}\n"
+                },
+                {
+                    "date": 1690520646124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,7 @@\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     // 关闭组件名称校验\n-    'vue/multi-word-component-names': 'off',\n-    'space-before-function-paren': 0\n+    'vue/multi-word-component-names': 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1690520741174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,9 @@\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     // 关闭组件名称校验\n-    'vue/multi-word-component-names': 'off'\n+    'vue/multi-word-component-names': 'off',\n+    // 去掉方法名和括号之间的空格，其他的不动。\n+    'space-before-function-paren': 0\n   }\n }\n"
+                },
+                {
+                    "date": 1690521059879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,26 +15,8 @@\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     // 关闭组件名称校验\n     'vue/multi-word-component-names': 'off',\n     // 去掉方法名和括号之间的空格，其他的不动。\n-    'space-before-function-paren': 0\n+    'space-before-function-paren': 0,\n+    'no-unused-vars': 'off'\n   }\n }\n-module.exports = {\n-  root: true,\n-  env: {\n-    node: true\n-  },\n-  extends: [\n-    'plugin:vue/vue3-essential',\n-    '@vue/standard'\n-  ],\n-  parserOptions: {\n-    parser: '@babel/eslint-parser'\n-  },\n-  rules: {\n-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    // 关闭组件名称校验\n-    'vue/multi-word-component-names': 'off'\n-  }\n-}\n"
                 }
             ],
             "date": 1690312701571,

@@ -1,8 +1,9 @@
-<template>aaaaaa</template>
+<template>http://www.dell-lee.com/imgs/vue3/${item.imagename}.png</template>
 
 <script>
 export default {
-  name: 'Template'
+  name: 'Template',
+  setup() {}
 }
 </script>
 

@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/views/orderConfirmation/ProductList.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1692770093472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1692770110118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,33 @@\n-<template>http://www.dell-lee.com/imgs/vue3/${item.imagename}.png</template>\r\n+<template><div class=\"content\">\r\n+    <div class=\"content__shopnames\">沃尔玛</div>\r\n+    <div class=\"content__products\">\r\n+      <div class=\"content__products__list\">\r\n+        <div class=\"content__products__list__item\">\r\n+          <img\r\n+            src=\"http://www.dell-lee.com/imgs/vue3/超市.png\"\r\n+            alt=\"\"\r\n+            class=\"content__products__list__item__img\"\r\n+          />\r\n+          <div class=\"content__products__list__item__detail\">\r\n+            <div class=\"content__products__list__item__detail__name\">\r\n+              番茄250g/份\r\n+            </div>\r\n+            <div class=\"content__products__list__item__detail__price\">\r\n+              <div class=\"content__products__list__item__detail__price__left\">\r\n+                ¥33.6 x 3\r\n+              </div>\r\n+              <div\r\n+                class=\"content__products__list__item__detail__price__right\"\r\n+              >\r\n+                ¥99.9\r\n+              </div>\r\n+            </div>\r\n+          </div>\r\n+        </div>\r\n+      </div>\r\n+    </div>\r\n+  </div></template>\r\n \r\n <script>\r\n export default {\r\n   name: 'Template',\r\n"
+                },
+                {
+                    "date": 1692770122033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,5 +35,56 @@\n }\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n+.content {\r\n+  position: absolute;\r\n+  top: 1.96rem;\r\n+  bottom: 0.5rem;\r\n+  left: 0.18rem;\r\n+  right: 0.18rem;\r\n+  &__shopnames {\r\n+    padding: 0.16rem;\r\n+    font-size: 0.16rem;\r\n+    line-height: 0.22rem;\r\n+    font-weight: bold;\r\n+    background-color: #fff;\r\n+  }\r\n+  &__products {\r\n+    position: absolute;\r\n+    top: 0.54rem;\r\n+    right: 0;\r\n+    left: 0;\r\n+    bottom: 0;\r\n+    &__list {\r\n+      background-color: #fff;\r\n+      &__item {\r\n+        display: flex;\r\n+        margin: 0 0.18rem;\r\n+        padding-bottom: 0.16rem;\r\n+        &__img {\r\n+          height: 0.46rem;\r\n+          margin-right: 0.16rem;\r\n+        }\r\n+        &__detail {\r\n+          flex: 1;\r\n+          &__name {\r\n+            font-size: 0.14rem;\r\n+            line-height: 0.2rem;\r\n+            color: #333;\r\n+          }\r\n+          &__price {\r\n+            font-size: 0.12rem;\r\n+            line-height: 0.14rem;\r\n+            display: flex;\r\n+            justify-content: space-between;\r\n+            margin-top: 0.06rem;\r\n+            &__left {\r\n+              color: #e93b3b;\r\n+            }\r\n+          }\r\n+        }\r\n+      }\r\n+    }\r\n+  }\r\n+}\r\n </style>\r\n"
+                },
+                {
+                    "date": 1692770171230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n-  name: 'Template',\r\n+  name: 'ProductList',\r\n   setup() {}\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1692771356188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,29 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n+const useCartListEffect = () => {\r\n+  const store = useStore()\r\n+  const cartList = store.state.cartList\r\n+  const setShowHidden = (shopId, showhidden) => [\r\n+    store.commit('setShowHidden', { shopId, showhidden })\r\n+  ]\r\n+  // 初始化边界值为\r\n+  for (const i in cartList) {\r\n+    if (cartList[i].show > 2) {\r\n+      setShowHidden(i, 2)\r\n+    } else {\r\n+      setShowHidden(i, cartList[i].show)\r\n+    }\r\n+  }\r\n+  // 点击更改边界条件、设置边界值showhidden大于show\r\n+  const clickShowAllProduct = (shopId) => {\r\n+    setShowHidden(shopId, cartList[shopId].show)\r\n+  }\r\n+\r\n+  return { cartList, clickShowAllProduct }\r\n+}\r\n export default {\r\n   name: 'ProductList',\r\n   setup() {}\r\n }\r\n"
+                }
+            ],
+            "date": 1692770093472,
+            "name": "Commit-0",
+            "content": "<template>http://www.dell-lee.com/imgs/vue3/${item.imagename}.png</template>\r\n\r\n<script>\r\nexport default {\r\n  name: 'Template',\r\n  setup() {}\r\n}\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n</style>\r\n"
+        }
+    ]
+}

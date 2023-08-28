@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/main.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1690436442105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690436482481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import { createApp } from 'vue'\r\n import App from './App.vue'\r\n import router from './router'\r\n import store from './store'\r\n-import \r\n \r\n+import './normalize.css'\r\n+import ''\r\n+\r\n createApp(App).use(store).use(router).mount('#app')\r\n"
+                },
+                {
+                    "date": 1690436583253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import router from './router'\r\n import store from './store'\r\n \r\n import './normalize.css'\r\n-import ''\r\n+import './style/index.scss'\r\n \r\n createApp(App).use(store).use(router).mount('#app')\r\n"
+                }
+            ],
+            "date": 1690436442105,
+            "name": "Commit-0",
+            "content": "import { createApp } from 'vue'\r\nimport App from './App.vue'\r\nimport router from './router'\r\nimport store from './store'\r\nimport \r\n\r\ncreateApp(App).use(store).use(router).mount('#app')\r\n"
+        }
+    ]
+}

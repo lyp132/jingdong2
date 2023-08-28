@@ -3,11 +3,59 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1690434045069,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690518274932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,15 @@\n import { createRouter, createWebHashHistory } from 'vue-router'\n \n const routes = [\n+  {\n+    path: '/',\n+    name: 'home',\n+    // route level code-splitting\n+    // this generates a separate chunk (about.[hash].js) for this route\n+    // which is lazy-loaded when the route is visited.\n+    component: () => import(/* webpackChunkName: \"about\" */ '../views/AboutView.vue')\n+  }\n   // {\n   //   path: '/',\n   //   name: 'home',\n   //   component: HomeView\n"
+                },
+                {
+                    "date": 1690518310049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,13 @@\n \n const routes = [\n   {\n     path: '/',\n-    name: 'home',\n+    name: 'Home',\n     // route level code-splitting\n     // this generates a separate chunk (about.[hash].js) for this route\n     // which is lazy-loaded when the route is visited.\n-    component: () => import(/* webpackChunkName: \"about\" */ '../views/AboutView.vue')\n+    component: () => import(/* webpackChunkName: \"Home\" */ '../views/home/Home.vue')\n   }\n   // {\n   //   path: '/',\n   //   name: 'home',\n"
+                },
+                {
+                    "date": 1691483045178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,14 @@\n const routes = [\n   {\n     path: '/',\n     name: 'Home',\n-    // route level code-splitting\n-    // this generates a separate chunk (about.[hash].js) for this route\n-    // which is lazy-loaded when the route is visited.\n     component: () => import(/* webpackChunkName: \"Home\" */ '../views/home/Home.vue')\n+  },\n+  {\n+    path: '/Login',\n+    name: 'Home',\n+    component: () => import(/* webpackChunkName: \"Home\" */ '../views/home/Home.vue')\n   }\n   // {\n   //   path: '/',\n   //   name: 'home',\n"
+                },
+                {
+                    "date": 1691483071773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n     name: 'Home',\n     component: () => import(/* webpackChunkName: \"Home\" */ '../views/home/Home.vue')\n   },\n   {\n-    path: '/Login',\n-    name: 'Home',\n-    component: () => import(/* webpackChunkName: \"Home\" */ '../views/home/Home.vue')\n+    path: '/;ogin',\n+    name: 'Login',\n+    component: () => import(/* webpackChunkName: \"Login\" */ '../views/login/Login.vue')\n   }\n   // {\n   //   path: '/',\n   //   name: 'home',\n"
+                },
+                {
+                    "date": 1691483077385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     name: 'Home',\n     component: () => import(/* webpackChunkName: \"Home\" */ '../views/home/Home.vue')\n   },\n   {\n-    path: '/;ogin',\n+    path: '/login',\n     name: 'Login',\n     component: () => import(/* webpackChunkName: \"Login\" */ '../views/login/Login.vue')\n   }\n   // {\n"
+                },
+                {
+                    "date": 1691492228359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,13 @@\n   {\n     path: '/login',\n     name: 'Login',\n     component: () => import(/* webpackChunkName: \"Login\" */ '../views/login/Login.vue')\n+  },\n+  {\n+    path: '/register',\n+    name: 'Register',\n+    component: () => import(/* webpackChunkName: \"Register\" */ '../views/register/Register.vue')\n   }\n   // {\n   //   path: '/',\n   //   name: 'home',\n"
+                },
+                {
+                    "date": 1691506703621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,13 @@\n   {\n     path: '/register',\n     name: 'Register',\n     component: () => import(/* webpackChunkName: \"Register\" */ '../views/register/Register.vue')\n+  },\n+  {\n+    path: '/shop',\n+    name: 'Shop',\n+    component: () => import(/* webpackChunkName: \"Shop\" */ '../views/shop/Shop.vue')\n   }\n   // {\n   //   path: '/',\n   //   name: 'home',\n"
+                },
+                {
+                    "date": 1691506732576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     name: 'Register',\n     component: () => import(/* webpackChunkName: \"Register\" */ '../views/register/Register.vue')\n   },\n   {\n-    path: '/shop',\n+    path: '/shop/:id',\n     name: 'Shop',\n     component: () => import(/* webpackChunkName: \"Shop\" */ '../views/shop/Shop.vue')\n   }\n   // {\n"
+                },
+                {
+                    "date": 1692612085563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,13 @@\n   {\n     path: '/shop/:id',\n     name: 'Shop',\n     component: () => import(/* webpackChunkName: \"Shop\" */ '../views/shop/Shop.vue')\n+  },\n+  {\n+    path: '/shop/:id',\n+    name: 'Shop',\n+    component: () => import(/* webpackChunkName: \"Shop\" */ '../views/shop/Shop.vue')\n   }\n   // {\n   //   path: '/',\n   //   name: 'home',\n"
+                },
+                {
+                    "date": 1692612144305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,11 @@\n     name: 'Shop',\n     component: () => import(/* webpackChunkName: \"Shop\" */ '../views/shop/Shop.vue')\n   },\n   {\n-    path: '/shop/:id',\n-    name: 'Shop',\n-    component: () => import(/* webpackChunkName: \"Shop\" */ '../views/shop/Shop.vue')\n+    path: '/cartList',\n+    name: 'CartList',\n+    component: () => import(/* webpackChunkName: \"CartList\" */ '../views/cartList/CartList.vue')\n   }\n   // {\n   //   path: '/',\n   //   name: 'home',\n"
+                },
+                {
+                    "date": 1692762767594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,13 @@\n   {\n     path: '/cartList',\n     name: 'CartList',\n     component: () => import(/* webpackChunkName: \"CartList\" */ '../views/cartList/CartList.vue')\n+  },\n+  {\n+    path: '/orderConfirmation',\n+    name: 'OrderConfirmation',\n+    component: () => import(/* webpackChunkName: \"OrderConfirmation\" */ '../views/orderConfirmation/OrderConfirmation.vue')\n   }\n   // {\n   //   path: '/',\n   //   name: 'home',\n"
+                },
+                {
+                    "date": 1692770595727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     name: 'CartList',\n     component: () => import(/* webpackChunkName: \"CartList\" */ '../views/cartList/CartList.vue')\n   },\n   {\n-    path: '/orderConfirmation',\n+    path: '/orderConfirmation/:id',\n     name: 'OrderConfirmation',\n     component: () => import(/* webpackChunkName: \"OrderConfirmation\" */ '../views/orderConfirmation/OrderConfirmation.vue')\n   }\n   // {\n"
                 }
             ],
             "date": 1690434045069,

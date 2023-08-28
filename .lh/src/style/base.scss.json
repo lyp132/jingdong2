@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/style/base.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1690436669999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1690436669998,
+            "name": "Commit-0",
+            "content": "html {\r\n    font-size: 100px;\r\n}\r\n\r\nbody {\r\n    font-size: .12rem;\r\n}"
+        }
+    ]
+}

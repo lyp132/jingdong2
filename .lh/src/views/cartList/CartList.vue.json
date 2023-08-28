@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/views/cartList/CartList.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1692611995880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1692612009375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-src/assets src/components src/components/ShopInfo.vue src/components/Toast.vue src/effects src/effects/cartEffects.js src/router src/router/index.js src/store src/store/index.js src/style src/utils src/utils/request.js src/views src/views/cartList src/views/cartList/CartList.vue src/views/home src/views/login src/views/register src/views/shop src/views/shop/Cart.vue src/views/shop/Content.vue src/views/shop/Shop.vue src/App.vue src/main.js src/normalize.css src/Template.vue\n\\ No newline at end of file\n+<template>aaaaaa</template>\r\n+\r\n+<script>\r\n+export default {\r\n+  name: 'Template',\r\n+  setup() {}\r\n+}\r\n+</script>\r\n+\r\n+<style lang=\"scss\" scoped>\r\n+</style>\r\n"
+                },
+                {
+                    "date": 1692612033905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n-<template>aaaaaa</template>\r\n+<template><div class=\"title\"></div></template>\r\n \r\n <script>\r\n export default {\r\n-  name: 'Template',\r\n+  name: 'CartList',\r\n   setup() {}\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1692612048178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<template><div class=\"title\"></div></template>\r\n+<template><div class=\"title\">我的全部购物车（2）</div></template>\r\n \r\n <script>\r\n export default {\r\n   name: 'CartList',\r\n"
+                },
+                {
+                    "date": 1692612215753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,14 @@\n-<template><div class=\"title\">我的全部购物车（2）</div></template>\r\n+<template><div class=\"title\">我的全部购物车（2）</div>\r\n+<Docker />\r\n+</template>\r\n \r\n <script>\r\n+import Docker from '../home/Docker.vue'\r\n+\r\n export default {\r\n   name: 'CartList',\r\n+  components: {Docker},\r\n   setup() {}\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1692612303313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,11 @@\n   <Docker />\r\n </template>\r\n \r\n <script>\r\n-import Docker from '../home/Docker.vue'\r\n+import Docker from '../../components/Docker.vue'\r\n \r\n+\r\n export default {\r\n   name: 'CartList',\r\n   components: { Docker },\r\n   setup() {}\r\n"
+                },
+                {
+                    "date": 1692612332528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"title\">我的全部购物车（2）</div>\r\n-  <Docker />\r\n+  <Docker :currentIndex=\"1\"/>\r\n </template>\r\n \r\n <script>\r\n import Docker from '../../components/Docker.vue'\r\n"
+                }
+            ],
+            "date": 1692611995880,
+            "name": "Commit-0",
+            "content": "src/assets src/components src/components/ShopInfo.vue src/components/Toast.vue src/effects src/effects/cartEffects.js src/router src/router/index.js src/store src/store/index.js src/style src/utils src/utils/request.js src/views src/views/cartList src/views/cartList/CartList.vue src/views/home src/views/login src/views/register src/views/shop src/views/shop/Cart.vue src/views/shop/Content.vue src/views/shop/Shop.vue src/App.vue src/main.js src/normalize.css src/Template.vue"
+        }
+    ]
+}

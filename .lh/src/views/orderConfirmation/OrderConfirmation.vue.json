@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/views/orderConfirmation/OrderConfirmation.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1692762628273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1692762776511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n-<template>aaaaaa</template>\r\n+<template>OrderConfirmation</template>\r\n \r\n <script>\r\n export default {\r\n-  name: 'Template',\r\n+  name: 'OrderConfirmation',\r\n   setup() {}\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1692763478262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-<template>OrderConfirmation</template>\r\n+<template><div class=\"top\">\r\n+    <div class=\"top__header\"></div>\r\n+</div></template>\r\n \r\n <script>\r\n export default {\r\n   name: 'OrderConfirmation',\r\n"
+                },
+                {
+                    "date": 1692763580413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"top\">\r\n-    <div class=\"top__header\"></div>\r\n+    <div class=\"top__header\"><div class=\"top__header__back iconfont\" v-html=\"\"></div></div>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1692763593519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\r\n   <div class=\"top\">\r\n     <div class=\"top__header\">\r\n       <div class=\"top__header__back iconfont\" v-html=\"\"></div>\r\n+      确认订单\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                }
+            ],
+            "date": 1692762628273,
+            "name": "Commit-0",
+            "content": "<template>aaaaaa</template>\r\n\r\n<script>\r\nexport default {\r\n  name: 'Template',\r\n  setup() {}\r\n}\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n</style>\r\n"
+        }
+    ]
+}

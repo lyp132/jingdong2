@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/views/orderConfirmation/Order.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1692770135045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1692770147505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,10 @@\n-<template>http://www.dell-lee.com/imgs/vue3/${item.imagename}.png</template>\r\n+<template><div class=\"order\">\r\n+    <div class=\"order__left\">\r\n+      实付金额 <span class=\"order__left__price\">¥62</span>\r\n+    </div>\r\n+    <div class=\"order__right\">提交订单</div>\r\n+  </div></template>\r\n \r\n <script>\r\n export default {\r\n   name: 'Template',\r\n"
+                },
+                {
+                    "date": 1692770162192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,36 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n-  name: 'Template',\r\n+  name: 'Order',\r\n   setup() {}\r\n }\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n+.order {\r\n+  position: absolute;\r\n+  left: 0;\r\n+  right: 0;\r\n+  bottom: 0;\r\n+  font-size: 0.14rem;\r\n+  height: 0.5rem;\r\n+  line-height: 0.5rem;\r\n+  background-color: #fff;\r\n+  display: flex;\r\n+  &__left {\r\n+    flex: 1;\r\n+    margin-left: 0.24rem;\r\n+    &__price {\r\n+      font-size: 0.16rem;\r\n+      color: #151515;\r\n+    }\r\n+  }\r\n+  &__right {\r\n+    width: 0.98rem;\r\n+    text-align: center;\r\n+    color: #fff;\r\n+    background-color: #4fb0f9;\r\n+  }\r\n+}\r\n </style>\r\n"
+                },
+                {
+                    "date": 1692774558749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,11 @@\n \r\n <script>\r\n export default {\r\n   name: 'Order',\r\n-  setup() {}\r\n+  setup() {\r\n+    const \r\n+  }\r\n }\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n"
+                }
+            ],
+            "date": 1692770135045,
+            "name": "Commit-0",
+            "content": "<template>http://www.dell-lee.com/imgs/vue3/${item.imagename}.png</template>\r\n\r\n<script>\r\nexport default {\r\n  name: 'Template',\r\n  setup() {}\r\n}\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n</style>\r\n"
+        }
+    ]
+}

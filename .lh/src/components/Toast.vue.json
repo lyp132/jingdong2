@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/Toast.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1691498075532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1691498152387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,12 @@\n }\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n+.toast {\r\n+    position: absolute;\r\n+    left: 50%;\r\n+    top: 50%;\r\n+    transform: translate(-50%, -50%);\r\n+    \r\n+}\r\n </style>\r\n"
+                },
+                {
+                    "date": 1691498276893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,7 @@\n   position: absolute;\r\n   left: 50%;\r\n   top: 50%;\r\n   transform: translate(-50%, -50%);\r\n+  font-size: .26rem;\r\n }\r\n </style>\r\n"
+                },
+                {
+                    "date": 1691498309102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n   position: absolute;\r\n   left: 50%;\r\n   top: 50%;\r\n   transform: translate(-50%, -50%);\r\n-  font-size: 0.26rem;\r\n+  font-size: 0.26rem;background: rgba(0,0,0, .35);\r\n }\r\n </style>\r\n"
+                }
+            ],
+            "date": 1691498075532,
+            "name": "Commit-0",
+            "content": "<template><div class=\"toast\">'数据'</div></template>\r\n\r\n<script>\r\nexport default {\r\n  name: 'Toast',\r\n  setup() {}\r\n}\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n</style>\r\n"
+        }
+    ]
+}

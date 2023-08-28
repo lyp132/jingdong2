@@ -1,0 +1,90 @@
+{
+    "sourceFile": "src/store/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1691676060557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1691676096714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,17 @@\n \n export default createStore({\n   state: {\n     cartList: {\n-      // 第一层为店铺ID\n-      shopId: {\n-        // 商品id\n-        productId: {},\n-        // 存储店铺id\n-        'shopId': shopId\n-      }\n+      // // 第一层为店铺ID\n+      // shopId: {\n+      //   // 商品id\n+      //   productId: {\n+      //     // 商品信息\n+      //   },\n+      //   // 存储店铺id\n+      //   'shopId': shopId\n+      // }\n     }\n   },\n   getters: {\n   },\n"
+                },
+                {
+                    "date": 1691677311999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,11 @@\n   },\n   getters: {\n   },\n   mutations: {\n+    changeCartItemInfo(state, payload) {\n+      \n+    }\n   },\n   actions: {\n   },\n   modules: {\n"
+                },
+                {
+                    "date": 1691677336447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   getters: {\n   },\n   mutations: {\n     changeCartItemInfo(state, payload) {\n-      \n+      const {}\n     }\n   },\n   actions: {\n   },\n"
+                },
+                {
+                    "date": 1691677352789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n   getters: {\n   },\n   mutations: {\n     changeCartItemInfo(state, payload) {\n-      const {}\n+      const {shopId, productId, item, num, shopName} = payload\n+      \n     }\n   },\n   actions: {\n   },\n"
+                },
+                {
+                    "date": 1691677575041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,14 @@\n   getters: {\n   },\n   mutations: {\n     changeCartItemInfo(state, payload) {\n-      const {shopId, productId, item, num, shopName} = payload\n+      const { shopId, productId, item, num, shopName } = payload\n+      const shopInfo = state.cartList[shopId] || {\n+        \n+      }\n       \n+      state.cartList[shopId] = shopInfo\n     }\n   },\n   actions: {\n   },\n"
+                },
+                {
+                    "date": 1691677773760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,11 @@\n   mutations: {\n     changeCartItemInfo(state, payload) {\n       const { shopId, productId, item, num, shopName } = payload\n       const shopInfo = state.cartList[shopId] || {\n+        shopName: '', shopId: '', productList: {}\n+      }\n+      const product = shopInfo.productList[productId] || {\n         \n       }\n       \n       state.cartList[shopId] = shopInfo\n"
+                },
+                {
+                    "date": 1691677961514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,12 @@\n       const { shopId, productId, item, num, shopName } = payload\n       const shopInfo = state.cartList[shopId] || {\n         shopName: '', shopId: '', productList: {}\n       }\n-      const product = shopInfo.productList[productId] || {\n-        \n+      let product = shopInfo.productList[productId]\n+      if (!product) {\n+        item.count = 0\n+        product = item\n       }\n       \n       state.cartList[shopId] = shopInfo\n     }\n"
+                },
+                {
+                    "date": 1691678119560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,17 +17,20 @@\n   getters: {\n   },\n   mutations: {\n     changeCartItemInfo(state, payload) {\n-      const { shopId, productId, item, num, shopName } = payload\n+      const { shopId, productId, item, num, shopname } = payload\n       const shopInfo = state.cartList[shopId] || {\n         shopName: '', shopId: '', productList: {}\n       }\n       let product = shopInfo.productList[productId]\n       if (!product) {\n         item.count = 0\n         product = item\n       }\n+      if (!shopInfo[shopName]) {\n+        shopInfo[shopName] = shopname\n+      }\n       \n       state.cartList[shopId] = shopInfo\n     }\n   },\n"
+                },
+                {
+                    "date": 1691678154186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n       if (!product) {\n         item.count = 0\n         product = item\n       }\n-      if (!shopInfo[shopName]) {\n+      if (!shopInfo[shopname]) {\n         shopInfo[shopName] = shopname\n       }\n       \n       state.cartList[shopId] = shopInfo\n"
+                },
+                {
+                    "date": 1691678184278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n       if (!product) {\n         item.count = 0\n         product = item\n       }\n-      if (!shopInfo[shopname]) {\n-        shopInfo[shopName] = shopname\n+      if (!shopInfo.shopName) {\n+        shopInfo.shopName = shopname\n       }\n       \n       state.cartList[shopId] = shopInfo\n     }\n"
+                },
+                {
+                    "date": 1691678298924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+import { createStore } from 'vuex'\n+\n+export default createStore({\n+  state: {\n+    cartList: {\n+      // // 第一层为店铺ID\n+      // shopId: {\n+      //   // 商品id\n+      //   productId: {\n+      //     // 商品信息\n+      //   },\n+      //   // 存储店铺id\n+      //   'shopId': shopId\n+      // }\n+    }\n+  },\n+  getters: {\n+  },\n+  mutations: {\n+    changeCartItemInfo(state, payload) {\n+      const { shopId, productId, item, num, shopname } = payload\n+      const shopInfo = state.cartList[shopId] || {\n+        shopName: '', shopId: '', productList: {}\n+      }\n+      let product = shopInfo.productList[productId]\n+      if (!product) {\n+        item.count = 0\n+        product = item\n+      }\n+      product.count = product.count + num\n+      \n+\n+      if (!shopInfo.shopName) {\n+        shopInfo.shopName = shopname\n+      }\n+      \n+      state.cartList[shopId] = shopInfo\n+    }\n+  },\n+  actions: {\n+  },\n+  modules: {\n+  }\n+})\n"
+                },
+                {
+                    "date": 1691678631927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,46 @@\n+import { createStore } from 'vuex'\n+\n+export default createStore({\n+  state: {\n+    cartList: {\n+      // // 第一层为店铺ID\n+      // shopId: {\n+      //   // 商品id\n+      //   productId: {\n+      //     // 商品信息\n+      //   },\n+      //   // 存储店铺id\n+      //   'shopId': shopId\n+      // }\n+    }\n+  },\n+  getters: {\n+  },\n+  mutations: {\n+    changeCartItemInfo(state, payload) {\n+      const { shopId, productId, item, num, shopname } = payload\n+      const shopInfo = state.cartList[shopId] || {\n+        shopName: '', shopId: '', productList: {}\n+      }\n+      let product = shopInfo.productList[productId]\n+      if (!product) {\n+        item.count = 0\n+        product = item\n+      }\n+      product.count = product.count + num\n+      if (num > 0) {\n+        product.ch\n+      }\n+\n+      if (!shopInfo.shopName) {\n+        shopInfo.shopName = shopname\n+      }\n+      \n+      state.cartList[shopId] = shopInfo\n+    }\n+  },\n+  actions: {\n+  },\n+  modules: {\n+  }\n+})\n"
+                },
+                {
+                    "date": 1691678648617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         product = item\n       }\n       product.count = product.count + num\n       if (num > 0) {\n-        product.ch\n+        product.select = true\n       }\n \n       if (!shopInfo.shopName) {\n         shopInfo.shopName = shopname\n"
+                },
+                {
+                    "date": 1691678945645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,25 +18,26 @@\n   },\n   mutations: {\n     changeCartItemInfo(state, payload) {\n       const { shopId, productId, item, num, shopname } = payload\n+      // 店铺所选商品信息\n       const shopInfo = state.cartList[shopId] || {\n         shopName: '', shopId: '', productList: {}\n       }\n+      // 每项商品信息product\n       let product = shopInfo.productList[productId]\n       if (!product) {\n         item.count = 0\n         product = item\n       }\n+      // 计算所选商品数量\n       product.count = product.count + num\n-      if (num > 0) {\n-        product.select = true\n-      }\n+      if (num > 0) { product.select = true }\n+      // 边界判断\n+      if (product.count < 0) { product.count = 0 }\n+      if (!shopInfo.shopName) { shopInfo.shopName = shopname }\n \n-      if (!shopInfo.shopName) {\n-        shopInfo.shopName = shopname\n-      }\n-      \n+      shopInfo.productList[productId] = product\n       state.cartList[shopId] = shopInfo\n     }\n   },\n   actions: {\n"
+                },
+                {
+                    "date": 1691679387035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n   },\n   mutations: {\n     changeCartItemInfo(state, payload) {\n       const { shopId, productId, item, num, shopname } = payload\n+      console.log(shopId, productId, item, num, shopname )\n       // 店铺所选商品信息\n       const shopInfo = state.cartList[shopId] || {\n         shopName: '', shopId: '', productList: {}\n       }\n"
+                },
+                {
+                    "date": 1691679595769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n       if (!shopInfo.shopName) { shopInfo.shopName = shopname }\n \n       shopInfo.productList[productId] = product\n       state.cartList[shopId] = shopInfo\n+      console.log(state.cartList)\n     }\n   },\n   actions: {\n   },\n"
+                },
+                {
+                    "date": 1691679601914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,8 @@\n   },\n   mutations: {\n     changeCartItemInfo(state, payload) {\n       const { shopId, productId, item, num, shopname } = payload\n-      console.log(shopId, productId, item, num, shopname)\n       // 店铺所选商品信息\n       const shopInfo = state.cartList[shopId] || {\n         shopName: '', shopId: '', productList: {}\n       }\n"
+                },
+                {
+                    "date": 1691679671359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,9 @@\n       if (product.count < 0) { product.count = 0 }\n       if (!shopInfo.shopName) { shopInfo.shopName = shopname }\n \n       shopInfo.productList[productId] = product\n+      shopInfo.shopId = shopId\n       state.cartList[shopId] = shopInfo\n       console.log(state.cartList)\n     }\n   },\n"
+                }
+            ],
+            "date": 1691676060557,
+            "name": "Commit-0",
+            "content": "import { createStore } from 'vuex'\n\nexport default createStore({\n  state: {\n    cartList: {\n      // 第一层为店铺ID\n      shopId: {\n        // 商品id\n        productId: {},\n        // 存储店铺id\n        'shopId': shopId\n      }\n    }\n  },\n  getters: {\n  },\n  mutations: {\n  },\n  actions: {\n  },\n  modules: {\n  }\n})\n"
+        }
+    ]
+}
